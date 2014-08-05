@@ -1,0 +1,17 @@
+'''
+Created on Aug 4, 2014
+
+@author: Vinguh
+'''
+from goody import irange
+
+triplet = 0
+for a in irange(1,999):
+    if triplet != 0:
+        break
+    for b in irange(1,999):
+        c = 1000 - a - b
+        if a**2 + b**2 == c**2:
+            triplet = a*b*c
+            print(triplet)
+            break
