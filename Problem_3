@@ -1,0 +1,33 @@
+'''
+Created on Aug 1, 2014
+
+@author: Vinguh
+'''
+#The prime factors of 13195 are 5, 7, 13 and 29.
+
+#What is the largest prime factor of the number 600851475143 ?
+
+from goody import irange
+from predicate import is_prime
+
+
+
+
+def largeprime(number):
+    greatest = 3
+    nmbr = number
+    while greatest == 3:
+        for i in irange(2,number):
+            while True:
+                if number%i == 0 and nmbr%i == 0 and is_prime(i):
+                    nmbr = nmbr/i
+                    if nmbr%i != 0 or nmbr == i:
+                        break
+                else:
+                    break
+            if is_prime(int(nmbr)):
+                greatest = int(nmbr)
+                break
+    return greatest
+
+print(largeprime(600851475143))
