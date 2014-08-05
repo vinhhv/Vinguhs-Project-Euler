@@ -1,0 +1,27 @@
+'''
+Created on Aug 2, 2014
+
+@author: Vinguh
+'''
+#The sum of the squares of the first ten natural numbers is, 1**2 + 2**2 + ... + 10**2 = 385
+
+#The square of the sum of the first ten natural numbers is, (1 + 2 + ... + 10)**2 = 55**2 = 3025
+
+#Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640.
+#Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+from goody import irange
+
+def difsums(low,high):
+    a=0
+    b=0
+    for i in irange(low,high):
+        a += i**2
+        b += i
+    b = b**2
+    difference = a-b
+    if difference < 0:
+        difference = difference*-1
+    return difference
+
+print(difsums(1,100))
