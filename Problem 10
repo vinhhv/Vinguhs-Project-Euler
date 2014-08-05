@@ -1,0 +1,28 @@
+'''
+Created on Aug 4, 2014
+
+@author: Vinguh
+'''
+#The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+#Find the sum of all the primes below two million.
+
+from predicate import is_prime
+from goody import irange
+
+def primesumunder(number):
+    numbers = dict()
+    for i in irange(2,number): 
+        numbers[i] = 'Prime'
+    for pr in numbers:
+        factors = irange(pr,number,pr)
+        for f in factors[1:]:
+            numbers[f] = 'Non-prime'
+    primes = [i for i in numbers if numbers[i]=='Prime']
+    sum = 0
+    for p in primes:
+        sum += p
+    return sum
+               
+
+print(primesumunder(2000000))
