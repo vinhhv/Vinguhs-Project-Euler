@@ -1,0 +1,18 @@
+'''
+Created on Aug 8, 2014
+
+@author: Vinguh
+'''
+#2**15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+
+#What is the sum of the digits of the number 2**1000?
+
+def sum_power_two(exponent):
+    number = 2**exponent
+    string_number = str(number)
+    sum = 0
+    for i in string_number:
+        sum += int(i)
+    return sum
+
+print(sum_power_two(1000))
